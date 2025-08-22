@@ -114,7 +114,7 @@ int main()
 		
 		// Timing =======================
 		
-		this_thread::sleep_for(50ms); // Small Step = 1 Game Tick
+		this_thread::sleep_for(std::chrono::milliseconds(50ms)); // Small Step = 1 Game Tick
 		nSpeedCount++;
 		bForceDown = (nSpeedCount == nSpeed);
 
@@ -219,7 +219,7 @@ int main()
 		{
 			// Display Frame (cheekily to draw lines)
 			WriteConsoleOutputCharacter(hConsole, screen, nScreenWidth * nScreenHeight, { 0,0 }, &dwBytesWritten);
-			this_thread::sleep_for(400ms); // Delay a bit
+			this_thread::sleep_for(std::chrono::milliseconds(400ms)); // Delay a bit
 
 			for (auto& v : vLines) {
 				for (int px = 1; px < nFieldWidth - 1; px++)
